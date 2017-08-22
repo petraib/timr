@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Variable resource:
+  # CREATE
+  get "/variables/new", :controller => "variables", :action => "new"
+  post "/create_variable", :controller => "variables", :action => "create"
+
+  # READ
+  get "/variables", :controller => "variables", :action => "index"
+  get "/variables/:id", :controller => "variables", :action => "show"
+
+  # UPDATE
+  get "/variables/:id/edit", :controller => "variables", :action => "edit"
+  post "/update_variable/:id", :controller => "variables", :action => "update"
+
+  # DELETE
+  get "/delete_variable/:id", :controller => "variables", :action => "destroy"
+  #------------------------------
+
   # Routes for the Source resource:
   # CREATE
   get "/sources/new", :controller => "sources", :action => "new"
