@@ -24,7 +24,7 @@
           Author
         </label>
 
-        <input type="text" id="author_id" name="author_id" placeholder="Author" class="form-control" value="<%= @source.author_id %>">
+        <%= select_tag(:author_id, options_from_collection_for_select(Author.all, :id, :created_at, @source.author_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for name -->
