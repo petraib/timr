@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Source resource:
+  # CREATE
+  get "/sources/new", :controller => "sources", :action => "new"
+  post "/create_source", :controller => "sources", :action => "create"
+
+  # READ
+  get "/sources", :controller => "sources", :action => "index"
+  get "/sources/:id", :controller => "sources", :action => "show"
+
+  # UPDATE
+  get "/sources/:id/edit", :controller => "sources", :action => "edit"
+  post "/update_source/:id", :controller => "sources", :action => "update"
+
+  # DELETE
+  get "/delete_source/:id", :controller => "sources", :action => "destroy"
+  #------------------------------
+
   # Routes for the Value resource:
   # CREATE
   get "/values/new", :controller => "values", :action => "new"
