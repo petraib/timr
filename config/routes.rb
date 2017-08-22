@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Ourmodel resource:
+  # CREATE
+  get "/ourmodels/new", :controller => "ourmodels", :action => "new"
+  post "/create_ourmodel", :controller => "ourmodels", :action => "create"
+
+  # READ
+  get "/ourmodels", :controller => "ourmodels", :action => "index"
+  get "/ourmodels/:id", :controller => "ourmodels", :action => "show"
+
+  # UPDATE
+  get "/ourmodels/:id/edit", :controller => "ourmodels", :action => "edit"
+  post "/update_ourmodel/:id", :controller => "ourmodels", :action => "update"
+
+  # DELETE
+  get "/delete_ourmodel/:id", :controller => "ourmodels", :action => "destroy"
+  #------------------------------
+
   # Routes for the Variable resource:
   # CREATE
   get "/variables/new", :controller => "variables", :action => "new"
