@@ -1,5 +1,5 @@
 class ModelsController < ApplicationController
-  before_action :current_user_must_be_model_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_model_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_model_user
     model = Model.find(params[:id])
