@@ -24,7 +24,7 @@
           Indicator
         </label>
 
-        <input type="text" id="indicator_id" name="indicator_id" placeholder="Indicator" class="form-control" value="<%= @variable.indicator_id %>">
+        <%= select_tag(:indicator_id, options_from_collection_for_select(Indicator.all, :id, :name, @variable.indicator_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for model_id -->
