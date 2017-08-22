@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Model resource:
+  # CREATE
+  get "/models/new", :controller => "models", :action => "new"
+  post "/create_model", :controller => "models", :action => "create"
+
+  # READ
+  get "/models", :controller => "models", :action => "index"
+  get "/models/:id", :controller => "models", :action => "show"
+
+  # UPDATE
+  get "/models/:id/edit", :controller => "models", :action => "edit"
+  post "/update_model/:id", :controller => "models", :action => "update"
+
+  # DELETE
+  get "/delete_model/:id", :controller => "models", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
   # READ
