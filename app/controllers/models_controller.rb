@@ -16,6 +16,7 @@ class ModelsController < ApplicationController
   end
 
   def show
+    @variable = Variable.new
     @model = Model.find(params[:id])
 
     render("models/show.html.erb")

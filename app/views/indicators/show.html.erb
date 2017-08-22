@@ -60,6 +60,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_value" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for indicator_id -->
+      <input type="hidden" name="indicator_id" value="<%= @indicator.id %>">
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for value -->
+      <div class="form-group">
+        <label for="value" class="control-label">
+          Value
+        </label>
+
+        <input type="text" id="value" name="value" placeholder="Value" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Value
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -91,6 +123,47 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_source" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for author_id -->
+      <div class="form-group">
+        <label for="author_id" class="control-label">
+          Author
+        </label>
+
+        <%= select_tag(:author_id, options_from_collection_for_select(Author.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for url -->
+      <div class="form-group">
+        <label for="url" class="control-label">
+          Url
+        </label>
+
+        <input type="text" id="url" name="url" placeholder="Url" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for indicator_id -->
+      <input type="hidden" name="indicator_id" value="<%= @indicator.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Source
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -122,6 +195,47 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_variable" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for indicator_id -->
+      <input type="hidden" name="indicator_id" value="<%= @indicator.id %>">
+
+      <!-- Label and input for model_id -->
+      <div class="form-group">
+        <label for="model_id" class="control-label">
+          Model
+        </label>
+
+        <%= select_tag(:model_id, options_from_collection_for_select(Model.all, :id, :user_id), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for weight -->
+      <div class="form-group">
+        <label for="weight" class="control-label">
+          Weight
+        </label>
+
+        <input type="text" id="weight" name="weight" placeholder="Weight" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for ourmodel_id -->
+      <div class="form-group">
+        <label for="ourmodel_id" class="control-label">
+          Ourmodel
+        </label>
+
+        <%= select_tag(:ourmodel_id, options_from_collection_for_select(Ourmodel.all, :id, :model_weight), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Variable
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

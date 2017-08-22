@@ -53,6 +53,47 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_variable" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for indicator_id -->
+      <div class="form-group">
+        <label for="indicator_id" class="control-label">
+          Indicator
+        </label>
+
+        <%= select_tag(:indicator_id, options_from_collection_for_select(Indicator.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for model_id -->
+      <input type="hidden" name="model_id" value="<%= @model.id %>">
+
+      <!-- Label and input for weight -->
+      <div class="form-group">
+        <label for="weight" class="control-label">
+          Weight
+        </label>
+
+        <input type="text" id="weight" name="weight" placeholder="Weight" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for ourmodel_id -->
+      <div class="form-group">
+        <label for="ourmodel_id" class="control-label">
+          Ourmodel
+        </label>
+
+        <%= select_tag(:ourmodel_id, options_from_collection_for_select(Ourmodel.all, :id, :model_weight), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Variable
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

@@ -6,6 +6,9 @@ class IndicatorsController < ApplicationController
   end
 
   def show
+    @variable = Variable.new
+    @source = Source.new
+    @value = Value.new
     @indicator = Indicator.find(params[:id])
 
     render("indicators/show.html.erb")
