@@ -1,6 +1,7 @@
 class OurmodelsController < ApplicationController
   def index
-    @ourmodels = Ourmodel.page(params[:page]).per(10)
+    @q = Ourmodel.ransack(params[:q])
+    @ourmodels = @q.result(:distinct => true).includes(:variables, :indicators).page(params[:page]).per(10)
 
     render("ourmodels/index.html.erb")
   end

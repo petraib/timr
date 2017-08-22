@@ -1,6 +1,7 @@
 class ValuesController < ApplicationController
   def index
-    @values = Value.page(params[:page]).per(10)
+    @q = Value.ransack(params[:q])
+    @values = @q.result(:distinct => true).includes(:indicator).page(params[:page]).per(10)
 
     render("values/index.html.erb")
   end

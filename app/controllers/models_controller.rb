@@ -10,7 +10,8 @@ class ModelsController < ApplicationController
   end
 
   def index
-    @models = current_user.models.page(params[:page]).per(10)
+    @q = current_user.models.ransack(params[:q])
+      @models = @q.result(:distinct => true).includes(:user, :variables, :indicators).page(params[:page]).per(10)
 
     render("models/index.html.erb")
   end

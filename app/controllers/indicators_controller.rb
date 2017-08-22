@@ -1,6 +1,7 @@
 class IndicatorsController < ApplicationController
   def index
-    @indicators = Indicator.page(params[:page]).per(10)
+    @q = Indicator.ransack(params[:q])
+    @indicators = @q.result(:distinct => true).includes(:values, :sources, :variables, :authors, :models, :ourmodels).page(params[:page]).per(10)
 
     render("indicators/index.html.erb")
   end
