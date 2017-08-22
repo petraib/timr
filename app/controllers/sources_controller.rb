@@ -1,6 +1,6 @@
 class SourcesController < ApplicationController
   def index
-    @sources = Source.all
+    @sources = Source.page(params[:page]).per(10)
 
     render("sources/index.html.erb")
   end

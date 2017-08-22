@@ -1,6 +1,6 @@
 class VariablesController < ApplicationController
   def index
-    @variables = Variable.all
+    @variables = Variable.page(params[:page]).per(10)
 
     render("variables/index.html.erb")
   end

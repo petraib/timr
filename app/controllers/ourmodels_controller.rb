@@ -1,6 +1,6 @@
 class OurmodelsController < ApplicationController
   def index
-    @ourmodels = Ourmodel.all
+    @ourmodels = Ourmodel.page(params[:page]).per(10)
 
     render("ourmodels/index.html.erb")
   end

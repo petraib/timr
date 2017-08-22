@@ -1,6 +1,6 @@
 class ValuesController < ApplicationController
   def index
-    @values = Value.all
+    @values = Value.page(params[:page]).per(10)
 
     render("values/index.html.erb")
   end
