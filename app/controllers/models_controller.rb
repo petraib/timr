@@ -10,7 +10,7 @@ class ModelsController < ApplicationController
   end
 
   def index
-    @models = Model.all
+    @models = current_user.models.page(params[:page]).per(10)
 
     render("models/index.html.erb")
   end
