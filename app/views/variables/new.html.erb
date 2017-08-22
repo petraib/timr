@@ -33,7 +33,7 @@
           Model
         </label>
 
-        <input type="text" id="model_id" name="model_id" placeholder="Model" class="form-control" value="<%= @variable.model_id %>">
+        <%= select_tag(:model_id, options_from_collection_for_select(Model.all, :id, :user_id, @variable.model_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for weight -->
