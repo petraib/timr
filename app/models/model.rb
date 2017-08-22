@@ -8,6 +8,10 @@ class Model < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :indicators,
+             :through => :variables,
+             :source => :indicator
+
   # Validations
 
 end
