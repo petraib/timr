@@ -47,8 +47,6 @@ class ModelsController < ApplicationController
   def update
     @model = Model.find(params[:id])
 
-    @model.user_id = params[:user_id]
-
     save_status = @model.save
 
     if save_status == true
