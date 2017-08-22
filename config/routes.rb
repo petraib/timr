@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Value resource:
+  # CREATE
+  get "/values/new", :controller => "values", :action => "new"
+  post "/create_value", :controller => "values", :action => "create"
+
+  # READ
+  get "/values", :controller => "values", :action => "index"
+  get "/values/:id", :controller => "values", :action => "show"
+
+  # UPDATE
+  get "/values/:id/edit", :controller => "values", :action => "edit"
+  post "/update_value/:id", :controller => "values", :action => "update"
+
+  # DELETE
+  get "/delete_value/:id", :controller => "values", :action => "destroy"
+  #------------------------------
+
   # Routes for the Author resource:
   # CREATE
   get "/authors/new", :controller => "authors", :action => "new"
