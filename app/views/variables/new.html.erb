@@ -51,7 +51,7 @@
           Ourmodel
         </label>
 
-        <input type="text" id="ourmodel_id" name="ourmodel_id" placeholder="Ourmodel" class="form-control" value="<%= @variable.ourmodel_id %>">
+        <%= select_tag(:ourmodel_id, options_from_collection_for_select(Ourmodel.all, :id, :model_weight, @variable.ourmodel_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
