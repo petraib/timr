@@ -18,8 +18,11 @@
         <td><%= model.user.email %></td>
         <td>
           <a href="/models/<%= model.id %>" class="btn btn-primary">Show</a>
-          <a href="/models/<%= model.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_model/<%= model.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == model.user %>
+            <a href="/models/<%= model.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_model/<%= model.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

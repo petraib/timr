@@ -1,4 +1,14 @@
 class ModelsController < ApplicationController
+  before_action :current_user_must_be_model_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_model_user
+    model = Model.find(params[:id])
+
+    unless current_user == model.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @models = Model.all
 
