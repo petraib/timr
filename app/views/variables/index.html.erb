@@ -18,10 +18,28 @@
 
       <% @variables.each do |variable| %>
       <tr>
-        <td><%= variable.indicator.name %></td>
-        <td><%= variable.model.user_id %></td>
+        <td>
+          <% if variable.indicator.present? %>
+            <a href="/indicators/<%= variable.indicator.id %>">
+              <%= variable.indicator.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if variable.model.present? %>
+            <a href="/models/<%= variable.model.id %>">
+              <%= variable.model.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= variable.weight %></td>
-        <td><%= variable.ourmodel.model_weight %></td>
+        <td>
+          <% if variable.ourmodel.present? %>
+            <a href="/ourmodels/<%= variable.ourmodel.id %>">
+              <%= variable.ourmodel.model_weight %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/variables/<%= variable.id %>" class="btn btn-primary">Show</a>
           <a href="/variables/<%= variable.id %>/edit" class="btn btn-warning">Edit</a>

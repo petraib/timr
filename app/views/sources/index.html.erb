@@ -18,10 +18,22 @@
 
       <% @sources.each do |source| %>
       <tr>
-        <td><%= source.author.created_at %></td>
+        <td>
+          <% if source.author.present? %>
+            <a href="/authors/<%= source.author.id %>">
+              <%= source.author.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= source.name %></td>
         <td><%= source.url %></td>
-        <td><%= source.indicator.name %></td>
+        <td>
+          <% if source.indicator.present? %>
+            <a href="/indicators/<%= source.indicator.id %>">
+              <%= source.indicator.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/sources/<%= source.id %>" class="btn btn-primary">Show</a>
           <a href="/sources/<%= source.id %>/edit" class="btn btn-warning">Edit</a>

@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Author</dt>
-      <dd><%= @source.author_id %></dd>
+      <dd>
+        <% if @source.author.present? %>
+          <a href="/authors/<%= @source.author_id %>">
+            <%= @source.author.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Name</dt>
       <dd><%= @source.name %></dd>
@@ -15,7 +21,13 @@
       <dd><%= @source.url %></dd>
 
       <dt>Indicator</dt>
-      <dd><%= @source.indicator_id %></dd>
+      <dd>
+        <% if @source.indicator.present? %>
+          <a href="/indicators/<%= @source.indicator_id %>">
+            <%= @source.indicator.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

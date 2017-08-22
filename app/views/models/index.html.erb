@@ -15,7 +15,13 @@
 
       <% @models.each do |model| %>
       <tr>
-        <td><%= model.user.email %></td>
+        <td>
+          <% if model.user.present? %>
+            <a href="/users/<%= model.user.id %>">
+              <%= model.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/models/<%= model.id %>" class="btn btn-primary">Show</a>
           

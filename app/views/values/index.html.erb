@@ -17,7 +17,13 @@
 
       <% @values.each do |value| %>
       <tr>
-        <td><%= value.indicator.name %></td>
+        <td>
+          <% if value.indicator.present? %>
+            <a href="/indicators/<%= value.indicator.id %>">
+              <%= value.indicator.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= value.date %></td>
         <td><%= value.value %></td>
         <td>

@@ -6,16 +6,34 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Indicator</dt>
-      <dd><%= @variable.indicator_id %></dd>
+      <dd>
+        <% if @variable.indicator.present? %>
+          <a href="/indicators/<%= @variable.indicator_id %>">
+            <%= @variable.indicator.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Model</dt>
-      <dd><%= @variable.model_id %></dd>
+      <dd>
+        <% if @variable.model.present? %>
+          <a href="/models/<%= @variable.model_id %>">
+            <%= @variable.model.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Weight</dt>
       <dd><%= @variable.weight %></dd>
 
       <dt>Ourmodel</dt>
-      <dd><%= @variable.ourmodel_id %></dd>
+      <dd>
+        <% if @variable.ourmodel.present? %>
+          <a href="/ourmodels/<%= @variable.ourmodel_id %>">
+            <%= @variable.ourmodel.model_weight %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
