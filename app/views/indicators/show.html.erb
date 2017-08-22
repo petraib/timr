@@ -32,3 +32,189 @@
     </div>
   </div>
 </div>
+
+<!-- A Indicator has many values -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Values
+      </li>
+
+      <% @indicator.values.each do |value| %>
+        <li class="list-group-item">
+          <a href="/values/<%= value.id %>">
+            <%= value.indicator_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/values/<%= value.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/values/<%= value.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_value/<%= value.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Indicator has many sources -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Sources
+      </li>
+
+      <% @indicator.sources.each do |source| %>
+        <li class="list-group-item">
+          <a href="/sources/<%= source.id %>">
+            <%= source.author_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/sources/<%= source.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/sources/<%= source.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_source/<%= source.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Indicator has many variables -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Variables
+      </li>
+
+      <% @indicator.variables.each do |variable| %>
+        <li class="list-group-item">
+          <a href="/variables/<%= variable.id %>">
+            <%= variable.indicator_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/variables/<%= variable.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/variables/<%= variable.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_variable/<%= variable.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Indicator has many authors -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Authors
+      </li>
+
+      <% @indicator.authors.each do |author| %>
+        <li class="list-group-item">
+          <a href="/authors/<%= author.id %>">
+            <%= author.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/authors/<%= author.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/authors/<%= author.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_author/<%= author.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Indicator has many models -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Models
+      </li>
+
+      <% @indicator.models.each do |model| %>
+        <li class="list-group-item">
+          <a href="/models/<%= model.id %>">
+            <%= model.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/models/<%= model.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/models/<%= model.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_model/<%= model.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Indicator has many ourmodels -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Ourmodels
+      </li>
+
+      <% @indicator.ourmodels.each do |ourmodel| %>
+        <li class="list-group-item">
+          <a href="/ourmodels/<%= ourmodel.id %>">
+            <%= ourmodel.model_weight %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/ourmodels/<%= ourmodel.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/ourmodels/<%= ourmodel.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_ourmodel/<%= ourmodel.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
