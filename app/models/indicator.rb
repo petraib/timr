@@ -1,6 +1,9 @@
 class Indicator < ApplicationRecord
   # Direct associations
 
+  has_many   :variables,
+             :dependent => :destroy
+
   has_many   :sources,
              :dependent => :destroy
 
