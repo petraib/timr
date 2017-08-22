@@ -1,5 +1,7 @@
 ActiveAdmin.register Indicator do
 
+ permit_params :name, :description, :expected_sign, :database_key
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
