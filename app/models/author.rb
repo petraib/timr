@@ -6,6 +6,10 @@ class Author < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :indicators,
+             :through => :sources,
+             :source => :indicator
+
   # Validations
 
 end
