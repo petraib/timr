@@ -12,6 +12,10 @@ class Indicator < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :ourmodels,
+             :through => :variables,
+             :source => :ourmodel
+
   has_many   :models,
              :through => :variables,
              :source => :model
