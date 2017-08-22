@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "indicators#index"
   # Routes for the Ourmodel resource:
   # CREATE
   get "/ourmodels/new", :controller => "ourmodels", :action => "new"
